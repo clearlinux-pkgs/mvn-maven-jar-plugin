@@ -4,7 +4,7 @@
 #
 Name     : mvn-maven-jar-plugin
 Version  : 3.0.2
-Release  : 1
+Release  : 2
 URL      : https://github.com/apache/maven-jar-plugin/archive/maven-jar-plugin-3.0.2.tar.gz
 Source0  : https://github.com/apache/maven-jar-plugin/archive/maven-jar-plugin-3.0.2.tar.gz
 Source1  : https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.0.2/maven-jar-plugin-3.0.2.jar
@@ -12,15 +12,35 @@ Source2  : https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-j
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
+Requires: mvn-maven-jar-plugin-data = %{version}-%{release}
 
 %description
 No detailed description available
+
+%package data
+Summary: data components for the mvn-maven-jar-plugin package.
+Group: Data
+
+%description data
+data components for the mvn-maven-jar-plugin package.
+
 
 %prep
 
 %build
 
 %install
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-jar-plugin/3.0.2
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-jar-plugin/3.0.2
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-jar-plugin/3.0.2
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-jar-plugin/3.0.2
+
 
 %files
 %defattr(-,root,root,-)
+
+%files data
+%defattr(-,root,root,-)
+/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-jar-plugin/3.0.2/maven-jar-plugin-3.0.2.jar
+/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-jar-plugin/3.0.2/maven-jar-plugin-3.0.2.pom
