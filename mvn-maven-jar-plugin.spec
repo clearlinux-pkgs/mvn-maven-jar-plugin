@@ -4,7 +4,7 @@
 #
 Name     : mvn-maven-jar-plugin
 Version  : 3.0.2
-Release  : 4
+Release  : 5
 URL      : https://github.com/apache/maven-jar-plugin/archive/maven-jar-plugin-3.0.2.tar.gz
 Source0  : https://github.com/apache/maven-jar-plugin/archive/maven-jar-plugin-3.0.2.tar.gz
 Source1  : https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.0.2/maven-jar-plugin-3.0.2.jar
@@ -15,12 +15,12 @@ Source5  : https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-jar-plu
 Source6  : https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.5/maven-jar-plugin-2.5.pom
 Source7  : https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.6/maven-jar-plugin-2.6.jar
 Source8  : https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.6/maven-jar-plugin-2.6.pom
+Source9  : https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.0.0/maven-jar-plugin-3.0.0.jar
+Source10  : https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.0.0/maven-jar-plugin-3.0.0.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: mvn-maven-jar-plugin-data = %{version}-%{release}
-BuildRequires : apache-maven
-BuildRequires : buildreq-mvn
 
 %description
 No detailed description available
@@ -63,6 +63,12 @@ cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugin
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-jar-plugin/2.6
 cp %{SOURCE8} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-jar-plugin/2.6/maven-jar-plugin-2.6.pom
 
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-jar-plugin/3.0.0
+cp %{SOURCE9} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-jar-plugin/3.0.0/maven-jar-plugin-3.0.0.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-jar-plugin/3.0.0
+cp %{SOURCE10} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-jar-plugin/3.0.0/maven-jar-plugin-3.0.0.pom
+
 
 %files
 %defattr(-,root,root,-)
@@ -75,5 +81,7 @@ cp %{SOURCE8} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugin
 /usr/share/java/.m2/repository/org/apache/maven/plugins/maven-jar-plugin/2.5/maven-jar-plugin-2.5.pom
 /usr/share/java/.m2/repository/org/apache/maven/plugins/maven-jar-plugin/2.6/maven-jar-plugin-2.6.jar
 /usr/share/java/.m2/repository/org/apache/maven/plugins/maven-jar-plugin/2.6/maven-jar-plugin-2.6.pom
+/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-jar-plugin/3.0.0/maven-jar-plugin-3.0.0.jar
+/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-jar-plugin/3.0.0/maven-jar-plugin-3.0.0.pom
 /usr/share/java/.m2/repository/org/apache/maven/plugins/maven-jar-plugin/3.0.2/maven-jar-plugin-3.0.2.jar
 /usr/share/java/.m2/repository/org/apache/maven/plugins/maven-jar-plugin/3.0.2/maven-jar-plugin-3.0.2.pom
